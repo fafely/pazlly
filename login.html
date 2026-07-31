@@ -1,0 +1,11 @@
+<html>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<section class="section">
+    <h2>تسجيل الدخول</h2>
+    <form method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit" class="btn">دخول</button>
+    </form>
+</section>
+
+</html>

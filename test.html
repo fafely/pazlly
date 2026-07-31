@@ -1,0 +1,138 @@
+<style>
+    .menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 28px;
+        color: #005F73;
+        cursor: pointer;
+    }
+    /*==========================
+    Hero
+==========================*/
+    
+    .hero {
+        width: min(94%, 1400px);
+        height: 82vh;
+        margin: 20px auto;
+        border-radius: 22px;
+        overflow: hidden;
+        background: url("images/front.jpg") center center/cover no-repeat;
+        position: relative;
+    }
+    
+    .menu-btn {
+        display: block;
+    }
+    
+    .hero {
+        height: 65vh;
+        margin: 15px;
+        background: url("images/front.jpg") center center/cover no-repeat;
+    }
+</style>
+
+<button id="menu-btn" class="menu-btn">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+
+<style>
+    .pricing {
+        padding: 50px 8%;
+        background: rgba(248, 200, 230, 0.814);
+        border-radius: 10px;
+    }
+    
+    .prices {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 35px;
+    }
+    
+    .price {
+        background: rgba(248, 200, 230, 0.814);
+        border-radius: 22px;
+        text-align: center;
+        padding: 50px 30px;
+        transition: .35s;
+        border: 1px solid #282828;
+    }
+    
+    .price:hover {
+        transform: translateY(-10px);
+    }
+    
+    .featured {
+        border: 2px solid purple;
+        transform: scale(1.05);
+    }
+    
+    .price h3 {
+        margin-bottom: 20px;
+        font-size: 40px;
+        color: purple;
+        ;
+    }
+    
+    .price h1 {
+        color: var(--gold);
+        margin-bottom: 30px;
+        font-size: 25px;
+    }
+</style>
+
+
+
+<section class="pricing" id="pricing">
+
+    <div class="title">
+
+        <span>Pricing</span>
+
+        <h2>الباقات</h2>
+
+    </div>
+
+    <div class="prices">
+
+        <div class="price">
+
+            <h3>جلسة تصوير
+            </h3>
+
+            <h1>250 د.ل</h1>
+
+            <a href="https://wa.me/218946849228?text=أرغب في حجز جلسة شخصية" class="btn gold">
+                    احجز
+                </a>
+
+        </div>
+
+        <div class="price featured">
+
+            <h3>حفل زفاف</h3>
+
+            <h1> أسعار تبدأمن 500 دينار</h1>
+
+            <a href="https://wa.me/218946849228?text=أرغب في حجز تصوير زفاف" class="btn">
+                    احجز
+                </a>
+
+        </div>
+
+        <div class="price">
+
+            <h3>أعيادالميلاد </h3>
+
+            <h1> اسعار تبدأ من 50 دينار</h1>
+
+            <a href="https://wa.me/218946849228?text=أرغب في تصوير منتجات" class="btn gold">
+                    احجز
+                </a>
+
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>تم الإرسال</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .page-content {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .service-item {
+            background: #fff;
+            padding: 30px;
+            margin: 0 auto;
+            max-width: 450px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #361792;
+            margin-bottom: 20px;
+        }
+        
+        .main-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: rgba(215, 147, 146, 0.7);
+            color: #361792;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 12px;
+            margin-top: 20px;
+            transition: 0.2s;
+        }
+        
+        .main-btn:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page-content">
+        <div class="service-item">
+            <h2>✅ تم إرسال طلبك بنجاح!</h2>
+
+            <p id="service-title">جاري التحميل...</p>
+
+            <p>سيتم الرد عليك في أقرب وقت عبر الواتساب.</p>
+
+            <a href="index.html" class="main-btn">العودة إلى الرئيسية</a>
+        </div>
+    </main>
+
+    <script>
+        // ⛔ هذا الجزء لجلب اسم الخدمة من الـ URL إذا أردتِ
+        const params = new URLSearchParams(window.location.search);
+        const serviceId = params.get("service_id");
+
+        if (serviceId) {
+            fetch(`https://djpro.onrender.com/api/services/${serviceId}/`)
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("service-title").innerHTML =
+                        `شكراً لاختيارك خدمة <strong>${data.title}</strong>.`;
+                })
+                .catch(() => {
+                    document.getElementById("service-title").innerText =
+                        "تم استلام الطلب.";
+                });
+        } else {
+            document.getElementById("service-title").innerHTML =
+                "تم إرسال الطلب.";
+        }
+    </script>
+
+</body>
+
+</html>
